@@ -135,6 +135,42 @@ you'll find a green button `invite a collaborator` in the web page, click it and
 
 ### 
 
+## All your need to know about ssh keys
+
+> ssh-keygen -t rsa -C "hongmiao.ian@gmail.com"
+
+this command will produce two files in `~/.ssh` directory: 
+
+> id_rsa (private key)
+>
+> id_rsa.pub (public key)
+
+(1) I use `hongmiao.ian@gmail.com` to produce a pair of keys (old keys) at 
+
+2021/6/19 14:01 in workplace windows10, and access `Yann` in Linux without user 
+
+password of `Yann` by using this old keys: 
+
+(i) copy windows10 ssh keys (old) to workplace (gongwei) 
+
+Linux (little server in LiJia): 
+
+> [scp](runoob.com/linux/linux-comm-scp.html) C:\User\Administrator\.ssh\id_rsa.pub Yann@10.102.226.188:/home/Yann/.ssh
+
+(ii) In Linux, add windows10 id_rsa.pub (old) to ~/.ssh authorized_keys: 
+
+> cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+(iii) This 3rd step is necessary, you should delete `id_rsa.pub` from windows10. 
+
+Because you won't use it again, and if you create a pair of ssh keys (new) in 
+
+workplace Linux, you will be confused by this old and new keys. 
+
+(2) I use `hongmiao.ian@gmail.com` to produce a pair of keys (new keys) at 
+
+2021/9/16 15:02 in workplace Linux.
+
 
 
 
