@@ -109,6 +109,40 @@ Here is the link [Jupyter](blog.csdn.net/GouGe_CSDN/article/details/104567559).
 
 ## Git outline
 
+### Record some weird problems
+
+No.1 ssh: connect to host github.com port 6100 failed, connection time out
+
+Description: I want to push local modifications of git repository to remote 
+
+repository, but when I put in the command
+
+> git push origin main
+
+terminal says that host github port 6100 failed, connection time out.
+
+Solution: I look up `/etc/ssh/ssh_config`, and I find the last line of ssh_config
+
+> Port 6100
+
+and my ASUS Ubuntu's ssh_config file doesn't have this line, and I comment it with 
+
+`#` and then `git push origin main`, well, it works.
+
+No.2 the authenticity of host 'github.com(13.150.177.223)' can't be establised
+
+Description: When I put in `git push origin main`, terminal says it.
+
+[Solution](blog.csdn.net/tree_ifconfig/article/details/81557091): well, actually I changed my ssh keys because I realize that 
+
+the original `id_rsa.pub` which I duplicate to my HMiao-Ian github account 
+
+came from windows10, no private key in workplace Linux matches it. 
+
+Then I operate `ssh-keygen -t rsa -C "XXX@XXX.com"` to reproduce a pair of keys
+
+and duplicate `id_rsa.pub` to github account. 
+
 ### How to invite your friends to your project
 
 (1) Make sure that your are the founder of this project, because only the founder can invite collaborators.
@@ -171,7 +205,6 @@ workplace Linux, you will be confused by this old and new keys.
 
 2021/9/16 15:02 in workplace Linux.
 
-authenticity
 
 
 
