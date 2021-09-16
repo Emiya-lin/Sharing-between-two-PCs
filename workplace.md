@@ -103,6 +103,8 @@ Here is the link of original website [No.port](cnblogs.com/Cqlismy/p/11539702.ht
 
 Here is the link [ssh-passwd](zhuanlan.zhihu.com/p/144159642).
 
+[Connecting to Github with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
+
 ## Jupyter remote service
 
 Here is the link [Jupyter](blog.csdn.net/GouGe_CSDN/article/details/104567559).
