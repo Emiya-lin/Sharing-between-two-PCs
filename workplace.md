@@ -20,6 +20,22 @@ Then you can close this window `19` by using
 ---
 prefix + s(Ctrl-x + s)
 
+### Tmux add new panel, window and session
+---
+prefix + c(Ctrl-x + c) : add new window;
+
+prefix + %(Ctrl-x + %) : seperate the current window to left/right panel;
+
+prefix + "(Ctrl-x + ") : seperate the current window to up/down panel;
+
+prefix + x(Ctrl-x + x) : kill the current window;
+
+prefix + d(Ctrl-x + d) : deteach/exit the current tmux (if you want to recall the tmux session you have deteached 
+
+you should type: tatt -t temp, if the session named "temp".);
+
+refix + s(Ctrl-x + s)
+
 ### 
 
 ## How to change the shell you use
@@ -109,7 +125,7 @@ Here is the link [ssh-passwd](zhuanlan.zhihu.com/p/144159642).
 
 Here is the link [Jupyter](blog.csdn.net/GouGe_CSDN/article/details/104567559).
 
-## Git outline
+## Git outline/usage
 
 ### Record some weird problems
 
@@ -161,13 +177,50 @@ If you are just collaborators rather than founder of this project, `Setting` opt
 
 you'll find a green button `invite a collaborator` in the web page, click it and put in a github username or Email to finist invitation.
 
-## Conda guideline
+## Conda guideline/usage
 
 ### list environments
 
 > conda env list
 >
 > conda info --envs
+
+## All you need to know about ssh keys
+
+> ssh-keygen -t rsa -C "hongmiao.ian@gmail.com"
+
+this command will produce two files in `~/.ssh` directory: 
+
+> id_rsa (private key)
+>
+> id_rsa.pub (public key)
+
+(1) I use `hongmiao.ian@gmail.com` to produce a pair of keys (old keys) at 
+
+2021/6/19 14:01 in workplace windows10, and access `Yann` in Linux without user 
+
+password of `Yann` by using this old keys: 
+
+(i) copy windows10 ssh keys (old) to workplace (gongwei) 
+
+Linux (little server in LiJia): 
+
+> [scp](runoob.com/linux/linux-comm-scp.html) C:\User\Administrator\.ssh\id_rsa.pub Yann@10.102.226.188:/home/Yann/.ssh
+
+(ii) In Linux, add windows10 id_rsa.pub (old) to ~/.ssh authorized_keys: 
+
+> cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+(iii) This 3rd step is necessary, you should delete `id_rsa.pub` from windows10. 
+
+Because you won't use it again, and if you create a pair of ssh keys (new) in 
+
+workplace Linux, you will be confused by this old and new keys. 
+
+(2) I use `hongmiao.ian@gmail.com` to produce a pair of keys (new keys) at 
+
+2021/9/16 15:02 in workplace Linux.
+
 
 
 
