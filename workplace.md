@@ -177,6 +177,26 @@ If you are just collaborators rather than founder of this project, `Setting` opt
 
 you'll find a green button `invite a collaborator` in the web page, click it and put in a github username or Email to finist invitation.
 
+### Push and push modifications between local and remote libraries
+---
+#### check remote library
+
+> git remote -v
+
+#### check and pull remote modifications to local library
+
+> git pull origin main
+
+If remote library has new modifications but local library doesn't have these modifications, then `git push` will fail.
+
+So you should use `git pull origin main` to make sure local library is `great or equal than` remote library. 
+
+`git pull` can be decomposed to `git fetch` and `git merge`.
+
+#### push local modifications to remote library
+
+> git push origin main
+
 ## Conda guideline/usage
 
 ### list environments
